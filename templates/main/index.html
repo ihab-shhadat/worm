@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    {% crispy form %}
+
+    <div class="row">
+        <div class="col-sm-6">
+            {% if image %}
+                <img class="img-fluid img-responsive" src="data:image/png;base64,{{ image }}">
+            {% endif %}
+        </div>
+        <div class="col-sm-6">
+            <code>{{ json }}</code>
+        </div>
+    </div>
+{% endblock %}
